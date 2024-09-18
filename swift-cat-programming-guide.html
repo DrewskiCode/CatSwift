@@ -1,0 +1,123 @@
+import React from 'react'
+import { Cat, Fish, Mouse, Code, Box, Repeat, GitBranch, Type, Book, List, Brackets, Key, Shield, Package, ToggleLeft } from 'lucide-react'
+
+const topics = [
+  {
+    title: "Variables",
+    content: "In Swift, variables are declared with 'var'. Example: var catName = \"Whiskers\"",
+    color: "bg-pink-200",
+    icon: Cat
+  },
+  {
+    title: "Functions",
+    content: "Swift functions are defined with 'func'. Example: func feedCat(food: String) -> Bool { ... }",
+    color: "bg-purple-200",
+    icon: Fish
+  },
+  {
+    title: "Operators",
+    content: "Swift has various operators. Example: let totalCats = houseCats + yardCats",
+    color: "bg-blue-200",
+    icon: Mouse
+  },
+  {
+    title: "Classes",
+    content: "Classes in Swift: class Cat { var name: String; init(name: String) { self.name = name } }",
+    color: "bg-green-200",
+    icon: Code
+  },
+  {
+    title: "Instances",
+    content: "Create instances with initializers: let fluffy = Cat(name: \"Fluffy\")",
+    color: "bg-yellow-200",
+    icon: Box
+  },
+  {
+    title: "Control Flow",
+    content: "Swift uses if, guard, switch for control flow. if cat.isHungry { feedCat() }",
+    color: "bg-red-200",
+    icon: GitBranch
+  },
+  {
+    title: "Loops",
+    content: "Swift has for-in loops: for cat in cats { cat.pet() }",
+    color: "bg-indigo-200",
+    icon: Repeat
+  },
+  {
+    title: "Optionals",
+    content: "Swift uses optionals for values that might be nil: var catToy: String?",
+    color: "bg-orange-200",
+    icon: ToggleLeft
+  },
+  {
+    title: "Strings",
+    content: "Strings in Swift: let catSound = \"Meow!\"; print(\"The cat says \\(catSound)\")",
+    color: "bg-teal-200",
+    icon: Type
+  },
+  {
+    title: "Dictionaries",
+    content: "Swift dictionaries: var catInfo = [\"name\": \"Mittens\", \"age\": 3]",
+    color: "bg-cyan-200",
+    icon: Book
+  },
+  {
+    title: "Arrays",
+    content: "Swift arrays: var catNames = [\"Fluffy\", \"Whiskers\", \"Socks\"]",
+    color: "bg-lime-200",
+    icon: List
+  },
+  {
+    title: "Closures",
+    content: "Swift closures: let catGreeter = { (name: String) in print(\"Hello, \\(name)!\") }",
+    color: "bg-fuchsia-200",
+    icon: Brackets
+  },
+  {
+    title: "Guard",
+    content: "Guard in Swift: guard let sleepingCat = getSleepingCat() else { return }",
+    color: "bg-rose-200",
+    icon: Shield
+  },
+  {
+    title: "Tuples",
+    content: "Swift tuples: let catStats = (name: \"Whiskers\", age: 5, color: \"orange\")",
+    color: "bg-amber-200",
+    icon: Package
+  },
+  {
+    title: "Enumerations",
+    content: "Swift enums: enum CatMood { case happy, grumpy, sleepy }",
+    color: "bg-emerald-200",
+    icon: Key
+  }
+]
+
+export default function Component() {
+  return (
+    <div className="min-h-screen bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-8">
+      <h1 className="text-4xl font-bold text-white text-center mb-8">🐱 Swift Purr-ogramming Guide 🐱</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {topics.map((topic, index) => {
+          const Icon = topic.icon
+          return (
+            <div key={index} className={`${topic.color} rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105`}>
+              <div className="p-4">
+                <div className="flex items-center mb-2">
+                  <Icon className="h-6 w-6" />
+                  <h2 className="text-xl font-semibold ml-2">{topic.title}</h2>
+                </div>
+                <p className="text-sm">{topic.content}</p>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+      <div className="mt-12 text-center text-white bg-black bg-opacity-30 p-6 rounded-lg">
+        <h2 className="text-2xl font-bold mb-2">Swift Tip:</h2>
+        <p className="text-lg">Remember, in Swift, semicolons are optional, just like a cat&apos;s affection! 😺</p>
+      </div>
+    </div>
+  )
+}
